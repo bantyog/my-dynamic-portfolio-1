@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#4A0878"/>
+<meta name="description" content="Trusted care, childcare, domestic and corporate staffing across Nigeria and the UK. Vetted, trained, compassionate professionals — placed in days."/>
+<meta property="og:title" content="Into Skills For Care & Corporate — Trusted Care, Delivered with Heart"/>
+<meta property="og:description" content="Vetted caregivers, nannies, domestic and corporate professionals across Nigeria & the UK."/>
+<meta property="og:type" content="website"/>
+<title>Into Skills For Care & Corporate Ltd — Trusted Care, Delivered with Heart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+*,*::before,*::after{min-width:0}
+:root{
+  --purple:#6B0EA8;
+  --purple-dark:#3D0664;
+  --purple-deep:#220140;
+  --purple-light:#9B3DD4;
+  --magenta:#C2008F;
+  --magenta-light:#E040B0;
+  --yellow:#FFC93C;
+  --yellow-dark:#E5AE10;
+  --cream:#FBF6FF;
+  --ink:#1B1226;
+  --gray:#5C5566;
+  --line:rgba(107,14,168,.12);
+  --radius:20px;
+  --shadow-sm:0 2px 8px rgba(34,1,64,.06);
+  --shadow-md:0 12px 32px rgba(34,1,64,.10);
+  --shadow-lg:0 24px 60px rgba(34,1,64,.18);
+  --container:1200px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;word-wrap:break-word;overflow-wrap:break-word}
+img,svg{max-width:100%;display:block}
+a{color:inherit;word-break:break-word}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:6px}
+
+/* Inline icons */
+.icon{width:1em;height:1em;display:inline-block;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+
+/* Accessibility */
+.skip-link{position:absolute;top:-100px;left:1rem;background:var(--purple);color:#fff;padding:12px 18px;border-radius:10px;z-index:9999;font-weight:600;transition:top .2s}
+.skip-link:focus{top:1rem}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Container */
+.wrap{width:min(100% - 2rem,var(--container));margin-inline:auto}
+
+/* Headings */
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--purple-deep);overflow-wrap:break-word;hyphens:auto}
+.eyebrow{display:inline-block;font-family:'Inter',sans-serif;font-size:clamp(11px,1.4vw,12px);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--magenta);background:rgba(194,0,143,.08);padding:6px 14px;border-radius:40px;margin-bottom:18px;max-width:100%}
+.section-title{font-size:clamp(1.75rem,4.5vw,3.4rem);margin-bottom:14px;overflow-wrap:break-word}
+.section-title em{font-style:italic;color:var(--magenta);font-weight:500}
+.section-sub{color:var(--gray);font-size:clamp(14px,1.5vw,17px);max-width:580px;margin:0 auto;line-height:1.7}
+.section-header{text-align:center;margin-bottom:clamp(36px,5vw,56px);padding-inline:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 24px;border-radius:50px;font-weight:600;font-size:clamp(14px,1.4vw,15px);text-decoration:none;transition:all .25s var(--ease);min-height:48px;white-space:nowrap;max-width:100%}
+.btn .icon{font-size:18px}
+.btn-primary{background:var(--yellow);color:var(--purple-deep);box-shadow:0 6px 20px rgba(255,201,60,.45)}
+.btn-primary:hover{background:var(--yellow-dark);transform:translateY(-2px);box-shadow:0 10px 28px rgba(255,201,60,.55)}
+.btn-purple{background:var(--purple);color:#fff;box-shadow:0 6px 20px rgba(107,14,168,.35)}
+.btn-purple:hover{background:var(--purple-dark);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.2);border-color:#fff}
+.btn-outline{background:transparent;border:1.5px solid var(--purple);color:var(--purple)}
+.btn-outline:hover{background:var(--purple);color:#fff}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 16px;transition:padding .3s var(--ease)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(18px);-webkit-backdrop-filter:saturate(180%) blur(18px);border:1px solid rgba(107,14,168,.1);border-radius:60px;padding:8px 12px 8px 20px;max-width:1100px;margin-inline:auto;box-shadow:var(--shadow-sm);transition:all .3s var(--ease)}
+.nav.scrolled .nav-inner{background:rgba(255,255,255,.96);box-shadow:var(--shadow-md)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;min-width:0}
+.nav-logo img{width:38px;height:38px;border-radius:10px;object-fit:contain;background:#fff;flex-shrink:0}
+.nav-brand-main{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--purple-deep);line-height:1;white-space:nowrap}
+.nav-brand-sub{font-size:10px;color:var(--magenta);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;white-space:nowrap}
+.nav-links{display:flex;gap:2px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--ink);font-size:14px;font-weight:500;padding:9px 14px;border-radius:40px;transition:all .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{background:rgba(107,14,168,.08);color:var(--purple)}
+.nav-cta{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.nav-cta .btn{padding:9px 18px;font-size:13px;min-height:40px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;background:var(--purple);color:#fff;align-items:center;justify-content:center;flex-shrink:0}
+.menu-btn .icon{font-size:22px}
+
+/* Mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:1500;background:linear-gradient(160deg,var(--purple-deep),var(--purple));display:flex;flex-direction:column;padding:90px 28px 40px;transform:translateY(-100%);transition:transform .4s var(--ease);overflow-y:auto;visibility:hidden}
+.mobile-menu.open{transform:translateY(0);visibility:visible}
+.mobile-menu a{display:block;color:#fff;text-decoration:none;font-family:'Fraunces',serif;font-size:clamp(22px,5vw,28px);font-weight:600;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-menu .mobile-ctas{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.mobile-menu .mobile-ctas .btn{justify-content:center;width:100%}
+.menu-close{position:absolute;top:18px;right:18px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);color:#fff;display:flex;align-items:center;justify-content:center}
+.menu-close .icon{font-size:22px}
+
+/* HERO */
+.hero{position:relative;min-height:92vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:stretch;padding-top:100px;background:linear-gradient(160deg,#FBF6FF 0%,#F4E8FF 100%);overflow:hidden}
+.hero-content{padding:clamp(32px,6vw,60px) clamp(20px,6vw,80px);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2;min-width:0}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:40px;font-size:clamp(12px,1.3vw,13px);font-weight:600;color:var(--purple-deep);width:fit-content;max-width:100%;margin-bottom:20px;box-shadow:var(--shadow-sm)}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(34,197,94,.2)}50%{box-shadow:0 0 0 8px rgba(34,197,94,0)}}
+.hero h1{font-size:clamp(2rem,5.2vw,3.9rem);font-weight:900;margin-bottom:22px;line-height:1.1;hyphens:none;overflow-wrap:normal;word-break:keep-all}
+.hero h1 em{font-style:italic;font-weight:500;background:linear-gradient(120deg,var(--magenta),var(--purple-light));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+@media (max-width:540px){.hero h1 em{white-space:normal}}
+.hero p.lead{font-size:clamp(15px,1.7vw,18px);color:var(--gray);max-width:540px;margin-bottom:28px;line-height:1.7}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.hero-trust{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.avatars{display:flex;flex-shrink:0}
+.avatars span{width:36px;height:36px;border-radius:50%;border:3px solid #fff;background:linear-gradient(135deg,var(--purple),var(--magenta));margin-left:-10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;box-shadow:var(--shadow-sm)}
+.avatars span:first-child{margin-left:0}
+.trust-text{font-size:13px;color:var(--gray);line-height:1.4;min-width:0}
+.trust-text strong{color:var(--purple-deep);display:block;font-size:14px}
+.stars-mini{color:var(--yellow);font-size:13px;letter-spacing:1px}
+
+/* Hero visual */
+.hero-visual{position:relative;padding:40px clamp(20px,6vw,60px) 40px 0;min-width:0}
+.hero-card-stack{position:relative;width:100%;height:100%;min-height:520px}
+.hero-img{position:absolute;border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);background:linear-gradient(135deg,var(--purple),var(--magenta))}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img-main{top:0;left:0;right:30px;bottom:80px}
+.hero-img-sub{bottom:0;right:0;width:55%;height:40%;border:6px solid #fff}
+.hero-floating-stat{position:absolute;top:30px;right:0;background:#fff;padding:14px 18px;border-radius:18px;box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;z-index:3;animation:float 6s ease-in-out infinite;max-width:calc(100% - 16px)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-floating-stat .badge-ic{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--yellow),#FFA94D);color:var(--purple-deep);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-floating-stat .badge-ic .icon{font-size:22px;stroke-width:2.5}
+.hero-floating-stat .num{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--purple-deep);line-height:1}
+.hero-floating-stat .lbl{font-size:11px;color:var(--gray);font-weight:500;white-space:nowrap}
+
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none}
+.hero-blob.b1{width:400px;height:400px;background:var(--magenta-light);top:-100px;left:-100px}
+.hero-blob.b2{width:500px;height:500px;background:var(--purple-light);bottom:-200px;right:-150px}
+
+/* STATS BAR */
+.stats-bar{background:var(--purple-deep);color:#fff;padding:36px 0;position:relative;overflow:hidden}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.stat{text-align:center;border-right:1px solid rgba(255,255,255,.1);padding:8px 12px;min-width:0}
+.stat:last-child{border-right:none}
+.stat .num{font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;color:var(--yellow);line-height:1;margin-bottom:6px}
+.stat .lbl{font-size:clamp(11px,1.3vw,13px);color:rgba(255,255,255,.7);font-weight:500}
+
+/* SERVICES */
+.services{padding:clamp(60px,8vw,100px) 0;background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:24px}
+.service-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:all .35s var(--ease);display:flex;flex-direction:column;position:relative;min-width:0}
+.service-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+.service-card:focus-within{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.service-img{height:200px;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--purple),var(--magenta))}
+.service-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}
+.service-card:hover .service-img img{transform:scale(1.08)}
+.service-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(34,1,64,.4));opacity:0;transition:opacity .3s}
+.service-card:hover .service-img::after{opacity:1}
+.service-icon{position:absolute;top:14px;left:14px;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;color:var(--purple);z-index:2;box-shadow:var(--shadow-sm)}
+.service-icon .icon{font-size:22px}
+.service-body{padding:24px;flex:1;display:flex;flex-direction:column;min-width:0}
+.service-body h3{font-size:clamp(17px,2vw,20px);margin-bottom:10px;color:var(--purple-deep)}
+.service-body p{color:var(--gray);font-size:14px;line-height:1.65;flex:1;margin-bottom:18px}
+.service-link{display:inline-flex;align-items:center;gap:6px;color:var(--magenta);font-weight:600;font-size:14px;text-decoration:none;transition:gap .2s;align-self:flex-start}
+.service-link:hover{gap:10px}
+.service-link .icon{font-size:16px}
+
+/* ABOUT */
+.about{padding:clamp(60px,8vw,100px) 0;background:linear-gradient(180deg,#fff,var(--cream))}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.about-visual{position:relative;min-width:0}
+.about-visual img{width:100%;border-radius:24px;box-shadow:var(--shadow-lg);aspect-ratio:4/5;object-fit:cover}
+.about-visual::before{content:'';position:absolute;top:-20px;left:-20px;right:40px;bottom:40px;border:3px solid var(--yellow);border-radius:24px;z-index:-1}
+.about-text{min-width:0}
+.about-text p{color:var(--gray);font-size:clamp(14px,1.6vw,16px);margin-bottom:16px;line-height:1.8}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.value{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-radius:14px;font-weight:600;color:var(--purple-deep);font-size:clamp(13px,1.4vw,14px);transition:all .2s;min-width:0}
+.value:hover{border-color:var(--magenta);transform:translateX(4px)}
+.value .check{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--magenta),var(--purple));color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.value .check .icon{font-size:16px;stroke-width:3}
+
+/* WHY */
+.why{padding:clamp(60px,8vw,100px) 0;background:linear-gradient(160deg,var(--purple-deep) 0%,var(--purple) 60%,var(--magenta) 100%);color:#fff;position:relative;overflow:hidden}
+.why::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;border-radius:50%;border:60px solid rgba(255,255,255,.04)}
+.why::after{content:'';position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;border-radius:50%;border:50px solid rgba(255,255,255,.04)}
+.why .section-title{color:#fff}
+.why .section-sub{color:rgba(255,255,255,.75)}
+.why .eyebrow{background:rgba(255,255,255,.12);color:var(--yellow)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;z-index:2}
+.why-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:var(--radius);padding:28px 22px;transition:all .3s var(--ease);min-width:0}
+.why-card:hover{background:rgba(255,255,255,.15);transform:translateY(-6px);border-color:var(--yellow)}
+.why-card .why-ic{width:56px;height:56px;border-radius:16px;background:var(--yellow);color:var(--purple-deep);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.why-card .why-ic .icon{font-size:28px;stroke-width:2}
+.why-card h3{color:#fff;font-size:clamp(16px,1.8vw,18px);margin-bottom:10px}
+.why-card p{color:rgba(255,255,255,.75);font-size:14px;line-height:1.65}
+
+/* TESTIMONIALS */
+.testimonials{padding:clamp(60px,8vw,100px) 0;background:var(--cream)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid var(--line);position:relative;transition:all .3s var(--ease);min-width:0}
+.testi:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.testi .quote{font-family:'Fraunces',serif;font-size:80px;color:var(--magenta);opacity:.15;position:absolute;top:10px;right:20px;line-height:1}
+.testi .stars{color:var(--yellow);font-size:16px;letter-spacing:2px;margin-bottom:14px}
+.testi p{color:var(--ink);font-size:15px;line-height:1.7;margin-bottom:20px}
+.testi-author{display:flex;align-items:center;gap:12px;min-width:0}
+.testi-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--magenta));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.testi-author .who{min-width:0}
+.testi-author .name{font-weight:700;color:var(--purple-deep);font-size:14px;overflow-wrap:break-word}
+.testi-author .role{font-size:12px;color:var(--gray);overflow-wrap:break-word}
+
+/* FAQ */
+.faq{padding:clamp(60px,8vw,100px) 0;background:#fff}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:all .3s var(--ease);background:#fff}
+.faq-item[open]{border-color:var(--purple);box-shadow:var(--shadow-sm)}
+.faq-item summary{padding:20px 24px;font-weight:600;color:var(--purple-deep);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;list-style:none;font-size:clamp(15px,1.7vw,16px)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:26px;color:var(--magenta);font-weight:300;transition:transform .3s var(--ease);line-height:1;flex-shrink:0}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item .answer{padding:0 24px 20px;color:var(--gray);line-height:1.7;font-size:15px}
+
+/* CONTACT */
+.contact{padding:clamp(60px,8vw,100px) 0;background:linear-gradient(180deg,#fff,var(--cream))}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+.contact-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#fff;transition:all .3s var(--ease);min-width:0}
+.contact-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.contact-card-header{padding:22px 24px;display:flex;align-items:center;gap:14px;color:#fff;min-width:0}
+.ng-header{background:linear-gradient(135deg,var(--purple),var(--purple-light))}
+.uk-header{background:linear-gradient(135deg,var(--magenta),#E040B0)}
+.contact-card-header .flag{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:24px;line-height:1}
+.contact-card-header .title{min-width:0}
+.contact-card-header h3{font-size:clamp(18px,2vw,22px);color:#fff;margin-bottom:2px;overflow-wrap:break-word}
+.contact-card-header .sub{font-size:12px;color:rgba(255,255,255,.85);overflow-wrap:break-word}
+.contact-body{padding:24px}
+.contact-item{display:flex;align-items:flex-start;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);min-width:0}
+.contact-item:last-child{border-bottom:none}
+.contact-item .ci{width:40px;height:40px;border-radius:12px;background:rgba(107,14,168,.08);color:var(--purple);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-item .ci .icon{font-size:18px}
+.uk-header + .contact-body .contact-item .ci{background:rgba(194,0,143,.08);color:var(--magenta)}
+.contact-item .info{min-width:0;flex:1;overflow-wrap:anywhere}
+.contact-label{font-size:11px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
+.contact-value{font-size:clamp(13px,1.5vw,15px);color:var(--ink);font-weight:500;overflow-wrap:anywhere;word-break:break-word}
+.contact-value a{color:var(--purple);text-decoration:none}
+.contact-value a:hover{color:var(--magenta);text-decoration:underline}
+
+/* Form */
+.form-area{max-width:820px;margin:40px auto 0;background:#fff;border-radius:24px;padding:clamp(24px,4vw,40px);border:1px solid var(--line);box-shadow:var(--shadow-md)}
+.form-area h3{text-align:center;font-size:clamp(20px,2.6vw,26px);margin-bottom:8px}
+.form-area .form-intro{text-align:center;color:var(--gray);margin-bottom:28px;font-size:clamp(13px,1.5vw,15px)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px;min-width:0}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:13px;font-weight:600;color:var(--purple-deep)}
+.form-group label .req{color:var(--magenta)}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--line);border-radius:12px;padding:13px 16px;font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color .2s,box-shadow .2s;min-height:48px;width:100%;max-width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--purple);box-shadow:0 0 0 4px rgba(107,14,168,.1)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-submit{margin-top:24px;width:100%;font-size:16px;padding:16px}
+
+/* FOOTER */
+footer{background:var(--purple-deep);color:#fff;padding:clamp(60px,8vw,80px) 0 28px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.2fr;gap:clamp(32px,4vw,48px);margin-bottom:48px}
+.footer-brand{min-width:0}
+.footer-brand img{height:48px;margin-bottom:14px;background:#fff;padding:6px;border-radius:10px;width:fit-content}
+.footer-brand .name{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin-bottom:12px;color:#fff;line-height:1.3}
+.footer-brand p{color:rgba(255,255,255,.65);font-size:14px;line-height:1.7;margin-bottom:18px;max-width:300px}
+.footer-social{display:flex;gap:10px}
+.social-btn{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all .2s;flex-shrink:0}
+.social-btn:hover{background:var(--yellow);color:var(--purple-deep);transform:translateY(-3px)}
+.social-btn .icon{font-size:18px}
+.footer-col{min-width:0}
+.footer-col h4{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px;position:relative;padding-bottom:12px;font-family:'Inter',sans-serif}
+.footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:32px;height:2px;background:var(--yellow)}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{color:rgba(255,255,255,.65);font-size:14px;text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:8px;overflow-wrap:anywhere}
+.footer-col a:hover{color:var(--yellow)}
+.footer-col a .icon{font-size:15px;flex-shrink:0}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-bottom p{color:rgba(255,255,255,.4);font-size:13px}
+.footer-bottom a{color:var(--yellow);text-decoration:none}
+
+/* WhatsApp float */
+.wa-float{position:fixed;bottom:20px;right:20px;z-index:998;width:56px;height:56px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(37,211,102,.5);text-decoration:none;transition:all .3s var(--ease)}
+.wa-float::before{content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;animation:waPulse 2s infinite;z-index:-1}
+@keyframes waPulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.5);opacity:0}}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float .icon{font-size:28px;stroke-width:2}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+/* ===== RESPONSIVE ===== */
+
+/* Large tablet / small desktop */
+@media(max-width:1100px){
+  .nav-links a{padding:9px 11px;font-size:13px}
+}
+
+/* Tablet */
+@media(max-width:980px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding-top:90px}
+  .hero-content{padding:40px 24px;text-align:center;align-items:center}
+  .hero-badge,.hero h1,.hero p.lead{margin-left:auto;margin-right:auto}
+  .hero-ctas{justify-content:center}
+  .hero-trust{justify-content:center}
+  .hero-visual{padding:0 24px 60px}
+  .hero-card-stack{min-height:420px;max-width:560px;margin:0 auto}
+  .about-grid{grid-template-columns:1fr;gap:48px}
+  .about-visual{max-width:460px;margin:0 auto}
+  .about-text{text-align:left}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .nav{padding:10px 12px}
+  .nav-inner{padding:8px 8px 8px 14px;gap:8px}
+  .nav-links{display:none}
+  .nav-cta .btn-outline{display:none}
+  .menu-btn{display:flex}
+  .nav-cta .btn{padding:8px 14px;font-size:12px;min-height:38px}
+  .nav-brand-sub{display:none}
+  .nav-brand-main{font-size:14px}
+  .nav-logo img{width:34px;height:34px}
+
+  .hero{padding-top:80px}
+  .hero-content{padding:32px 20px}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:0}
+  .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:14px 8px}
+  .stat:nth-child(2n){border-right:none}
+  .stat:nth-last-child(-n+2){border-bottom:none}
+
+  .services-grid{grid-template-columns:1fr}
+  .why-grid,.testi-grid,.contact-grid,.values,.form-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .testi{padding:24px}
+  .contact-body{padding:20px}
+  .contact-card-header{padding:18px 20px}
+  .hero-floating-stat{padding:10px 14px}
+  .hero-floating-stat .num{font-size:17px}
+  .hero-floating-stat .lbl{font-size:10px}
+}
+
+@media(max-width:480px){
+  .wrap{width:min(100% - 1.5rem,var(--container))}
+  .hero h1{font-size:clamp(1.75rem,8vw,2.5rem)}
+  .hero-ctas{flex-direction:column;align-items:stretch;width:100%}
+  .hero-ctas .btn{width:100%}
+  .hero-trust{justify-content:center;text-align:center}
+  .nav-cta .btn-primary{padding:8px 12px;font-size:12px}
+  .wa-float{width:52px;height:52px;bottom:16px;right:16px}
+  .wa-float .icon{font-size:24px}
+  .stat .num{font-size:1.6rem}
+  .stats-grid{gap:0}
+  .service-img{height:170px}
+  .about-visual::before{top:-12px;left:-12px;right:20px;bottom:20px}
+  .form-area{padding:22px 18px}
+  .form-group input,.form-group select,.form-group textarea{font-size:16px}
+  .footer-brand p{max-width:100%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ICON SPRITE -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <!-- Services -->
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="i-baby" viewBox="0 0 24 24"><path d="M9 12h.01M15 12h.01M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 9.5L12 2l9 7.5V20a2 2 0 0 1-2 2h-4v-7H9v7H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></symbol>
+    <symbol id="i-grad" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <!-- Social -->
+    <symbol id="i-fb" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1s-.8 1-.9 1.2c-.2.2-.3.2-.6.1s-1.3-.5-2.4-1.5c-.9-.8-1.5-1.8-1.7-2.1s0-.5.1-.6c.1-.1.3-.3.4-.5l.3-.5c.1-.2.1-.4 0-.5L9 6.9c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4S5.9 8 5.9 9.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3M12 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 6L.1 24l6.3-1.7c1.7.9 3.7 1.4 5.7 1.4 6.6 0 11.9-5.3 11.9-11.9C24 5.3 18.6 0 12 0z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Into Skills home">
+      <img src="Images/LOGO.png" alt=""/>
+      <div>
+        <div class="nav-brand-main">Into Skills</div>
+        <div class="nav-brand-sub">Care &amp; Corporate</div>
+      </div>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+2349058661773" class="btn btn-outline">Call</a>
+      <a href="#contact" class="btn btn-primary">Book Now</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="menu-close" id="menuClose" aria-label="Close menu">
+    <svg class="icon"><use href="#i-x"/></svg>
+  </button>
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#why">Why Us</a>
+  <a href="#contact">Contact</a>
+  <div class="mobile-ctas">
+    <a href="tel:+2349058661773" class="btn btn-ghost">Call Us</a>
+    <a href="#contact" class="btn btn-primary">Book a Consultation</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot" aria-hidden="true"></span>
+      Now placing in Nigeria &amp; the UK
+    </div>
+    <h1>Trusted care,<br><em>delivered with heart.</em></h1>
+    <p class="lead">Vetted, trained and genuinely compassionate caregivers, nannies, domestic staff and corporate assistants — matched to your family or business in days, not weeks.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">
+        Book a Free Consultation
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="#services" class="btn btn-outline">Explore Services</a>
+    </div>
+    <div class="hero-trust">
+      <div class="avatars" aria-hidden="true">
+        <span>AO</span><span>CE</span><span>FB</span><span>+</span>
+      </div>
+      <div class="trust-text">
+        <strong>500+ families &amp; businesses placed</strong>
+        <div class="stars-mini">★★★★★ <span style="color:var(--gray)">4.9 / 5 rating</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-stack">
+      <div class="hero-img hero-img-main">
+        <img src="images/cert.jpg" alt="A professional caregiver supporting a smiling elderly client"/>
+      </div>
+      <div class="hero-img hero-img-sub">
+        <img src="Images/granny.png" alt="A nanny caring for happy children"/>
+      </div>
+      <div class="hero-floating-stat">
+        <div class="badge-ic"><svg class="icon"><use href="#i-check"/></svg></div>
+        <div>
+          <div class="num">100%</div>
+          <div class="lbl">Background-checked</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-bar" aria-label="Company statistics">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num">500+</div><div class="lbl">Successful Placements</div></div>
+    <div class="stat"><div class="num">98%</div><div class="lbl">Client Satisfaction</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">Countries Served</div></div>
+    <div class="stat"><div class="num">24/7</div><div class="lbl">Support Available</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2 class="section-title">Care &amp; staffing, <em>tailored to you</em></h2>
+      <p class="section-sub">From your family's home to your boardroom — we place the right people, vetted, trained and ready to make a real difference.</p>
+    </div>
+    <div class="services-grid">
+
+      <article class="service-card reveal">
+        <div class="service-img">
+          <span class="service-icon"><svg class="icon"><use href="#i-heart"/></svg></span>
+          <img src="Images/granny.png" alt="Caregiver assisting an elderly woman"/>
+        </div>
+        <div class="service-body">
+          <h3>Elderly Home Care</h3>
+          <p>Compassionate caregivers, companions and hospital helpers — supporting the elderly with dignity in their own homes.</p>
+          <a href="#contact" class="service-link">Request a carer <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-img">
+          <span class="service-icon"><svg class="icon"><use href="#i-baby"/></svg></span>
+          <img src="Images/kids.jpg" alt="Nanny playing with children"/>
+        </div>
+        <div class="service-body">
+          <h3>Childcare &amp; Nannies</h3>
+          <p>Loving, vetted, experienced nannies carefully matched to your family — short-term, live-in or full-time.</p>
+          <a href="#contact" class="service-link">Find a nanny <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-img">
+          <span class="service-icon"><svg class="icon"><use href="#i-home"/></svg></span>
+          <img src="Images/Domestic.png" alt="Domestic assistant cleaning a kitchen"/>
+        </div>
+        <div class="service-body">
+          <h3>Domestic Assistance</h3>
+          <p>Reliable domestic staff for cleaning, cooking, errands and full household management — done right, every time.</p>
+          <a href="#contact" class="service-link">Get help at home <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-img" style="background:linear-gradient(135deg,#880E4F,#C2185B)">
+          <span class="service-icon"><svg class="icon"><use href="#i-briefcase"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Executive Assistants</h3>
+          <p>Discreet, polished executive and corporate assistants to support busy professionals and growing organisations.</p>
+          <a href="#contact" class="service-link">Hire an EA <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-img" style="background:linear-gradient(135deg,#4A0072,#7B1FA2)">
+          <span class="service-icon"><svg class="icon"><use href="#i-pulse"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Corporate Wellness</h3>
+          <p>Tailored workplace wellbeing programmes and wellness consultations — keep your workforce healthy and productive.</p>
+          <a href="#contact" class="service-link">Build a programme <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="service-card reveal">
+    <div class="service-img">
+        <span class="service-icon"><svg class="icon"><use href="#i-grad"/></svg></span>
+        <img src="Images/cert.jpg" alt="Training and certification workshop"/>
+    </div>
+
+    <div class="service-body">
+        <h3>Training &amp; Workshops</h3>
+        <p>Skills development and certification programmes for care professionals, corporate staff, and ambitious individuals.</p>
+        <a href="#contact" class="service-link">View Programmes <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-img" style="background:linear-gradient(135deg,#6A1B9A,#AB47BC)">
+          <span class="service-icon"><svg class="icon"><use href="#i-sun"/></svg></span>
+        </div>
+        <div class="service-body">
+          <h3>Adult Day Care Centre</h3>
+          <p>A safe, engaging daytime environment for adults who need supervised support and meaningful social interaction.</p>
+          <a href="#contact" class="service-link">Visit our centre <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual reveal">
+      <img src="ABOUT.jpg" alt="Members of the Into Skills team"/>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">Who We Are</span>
+      <h2 class="section-title">Care with heart. <em>Excellence by design.</em></h2>
+      <p>Into Skills For Care &amp; Corporate Limited is a professional staffing and care services company operating across Nigeria and the United Kingdom.</p>
+      <p>We source, train and deploy compassionate, skilled people to support families, the elderly, children and corporate organisations — delivered with integrity, warmth and absolute reliability.</p>
+      <div class="values">
+        <div class="value"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Compassion</div>
+        <div class="value"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Integrity</div>
+        <div class="value"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Excellence</div>
+        <div class="value"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Reliability</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 class="section-title">Why families &amp; companies <em>trust Into Skills</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-ic"><svg class="icon"><use href="#i-shield"/></svg></div>
+        <h3>Background Checked</h3>
+        <p>Every professional we place is thoroughly vetted with full background and reference checks.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic"><svg class="icon"><use href="#i-award"/></svg></div>
+        <h3>Trained &amp; Certified</h3>
+        <p>Professional training and certification before deployment — skill, confidence, competence.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic"><svg class="icon"><use href="#i-calendar"/></svg></div>
+        <h3>Flexible Packages</h3>
+        <p>Short-term, long-term, live-in or live-out — tailored to your unique schedule.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-ic"><svg class="icon"><use href="#i-globe"/></svg></div>
+        <h3>Nigeria &amp; UK Based</h3>
+        <p>Offices in both Nigeria and the United Kingdom — local expertise on both sides.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Testimonials</span>
+      <h2 class="section-title">What our clients <em>say</em></h2>
+    </div>
+    <div class="testi-grid">
+      <article class="testi reveal">
+        <span class="quote" aria-hidden="true">"</span>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Into Skills provided an exceptional caregiver for my elderly mother. The professionalism and genuine compassion were outstanding — we couldn't be more grateful.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">AO</div>
+          <div class="who"><div class="name">Adaeze Okonkwo</div><div class="role">Family Client — Lagos, Nigeria</div></div>
+        </div>
+      </article>
+      <article class="testi reveal">
+        <span class="quote" aria-hidden="true">"</span>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>Within weeks, the corporate assistant from Into Skills had transformed our office operations. Highly recommended for any business needing reliable support.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">CE</div>
+          <div class="who"><div class="name">Chukwuemeka Eze</div><div class="role">Corporate Client — Abuja, Nigeria</div></div>
+        </div>
+      </article>
+      <article class="testi reveal">
+        <span class="quote" aria-hidden="true">"</span>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>The nanny they placed with us is brilliant with our kids. The screening process gave us full confidence — Into Skills truly delivers on quality and care.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">FB</div>
+          <div class="who"><div class="name">Funmi Badmus</div><div class="role">Family Client — London, UK</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Questions</span>
+      <h2 class="section-title">Frequently asked <em>questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal" open>
+        <summary>How are your caregivers vetted?</summary>
+        <div class="answer">Every candidate undergoes identity verification, full background and reference checks, professional skills assessment and an in-person interview before they are eligible for placement.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Can I hire short-term staff?</summary>
+        <div class="answer">Yes. We offer hourly, daily, weekly, monthly and long-term placements — including live-in and live-out arrangements to fit your schedule.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Do you provide UK placements?</summary>
+        <div class="answer">Yes — our UK office handles placements across the United Kingdom, subject to eligibility, visa status and role requirements.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>How quickly can services begin?</summary>
+        <div class="answer">For most domestic and care roles, placements begin within 3–7 days of the initial consultation. Specialist or executive roles may take a little longer.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What if the placement isn't the right fit?</summary>
+        <div class="answer">We offer a replacement guarantee within the first 30 days. If something isn't working, we'll match you with a new professional at no extra cost.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2 class="section-title">Let's find your <em>perfect match</em></h2>
+      <p class="section-sub">Reach our team in Nigeria or the UK — we typically respond within a few hours.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-card-header ng-header">
+          <span class="flag" aria-hidden="true">NG</span>
+          <div class="title"><h3>Nigeria Office</h3><div class="sub">Lagos, Nigeria</div></div>
+        </div>
+        <div class="contact-body">
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-phone"/></svg></div>
+            <div class="info"><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+2349058661773">+234 905 866 1773</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-chat"/></svg></div>
+            <div class="info"><div class="contact-label">WhatsApp</div><div class="contact-value"><a href="https://wa.me/2349058661774" target="_blank" rel="noopener">+234 905 866 1774</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-mail"/></svg></div>
+            <div class="info"><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:info@intoskillsforcare.com">info@intoskillsforcare.com</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-pin"/></svg></div>
+            <div class="info"><div class="contact-label">Address</div><div class="contact-value">Lagos, Nigeria</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-card-header uk-header">
+          <span class="flag" aria-hidden="true">UK</span>
+          <div class="title"><h3>UK Office</h3><div class="sub">United Kingdom</div></div>
+        </div>
+        <div class="contact-body">
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-phone"/></svg></div>
+            <div class="info"><div class="contact-label">Phone</div><div class="contact-value"><a href="tel:+44XXXXXXXXXX">+44 XXX XXXX XXXX</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-chat"/></svg></div>
+            <div class="info"><div class="contact-label">WhatsApp</div><div class="contact-value"><a href="https://wa.me/44XXXXXXXXXX" target="_blank" rel="noopener">+44 XXX XXXX XXXX</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-mail"/></svg></div>
+            <div class="info"><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:uk@intoskillsforcare.com">uk@intoskillsforcare.com</a></div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci"><svg class="icon"><use href="#i-pin"/></svg></div>
+            <div class="info"><div class="contact-label">Address</div><div class="contact-value">United Kingdom</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="form-area reveal" id="contactForm" novalidate>
+      <h3>Send us a message</h3>
+      <p class="form-intro">Tell us a little about what you need and we'll get back to you shortly.</p>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fname">Full name <span class="req">*</span></label>
+          <input type="text" id="fname" name="name" required autocomplete="name" placeholder="e.g. Adaeze Okonkwo"/>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email address <span class="req">*</span></label>
+          <input type="email" id="femail" name="email" required autocomplete="email" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label for="fphone">Phone number</label>
+          <input type="tel" id="fphone" name="phone" autocomplete="tel" placeholder="+234 or +44…"/>
+        </div>
+        <div class="form-group">
+          <label for="fservice">Service interested in</label>
+          <select id="fservice" name="service">
+            <option value="">Select a service…</option>
+            <option>Elderly Home Care</option>
+            <option>Childcare / Nanny</option>
+            <option>Domestic Assistance</option>
+            <option>Executive Assistant</option>
+            <option>Corporate Wellness</option>
+            <option>Training &amp; Workshops</option>
+            <option>Adult Day Care Centre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="flocation">Your location</label>
+          <select id="flocation" name="location">
+            <option value="">Select…</option>
+            <option>Nigeria</option>
+            <option>United Kingdom</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fdate">Preferred start date</label>
+          <input type="date" id="fdate" name="date"/>
+        </div>
+        <div class="form-group full">
+          <label for="fmessage">Message</label>
+          <textarea id="fmessage" name="message" placeholder="Tell us about your requirements…"></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary form-submit">Send Message
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="LOGO.png" alt="Into Skills For Care &amp; Corporate Limited"/>
+        <div class="name">Into Skills For Care<br/>&amp; Corporate Limited</div>
+        <p>Your trusted partner for care, domestic and corporate staffing across Nigeria and the United Kingdom.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook"><svg class="icon"><use href="#i-fb"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a>
+          <a href="https://wa.me/2349058661774" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp"><svg class="icon"><use href="#i-wa"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Elderly Home Care</a></li>
+          <li><a href="#services">Childcare / Nanny</a></li>
+          <li><a href="#services">Domestic Assistance</a></li>
+          <li><a href="#services">Executive Assistant</a></li>
+          <li><a href="#services">Corporate Wellness</a></li>
+          <li><a href="#services">Training &amp; Workshops</a></li>
+          <li><a href="#services">Adult Day Care Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+2349058661773"><svg class="icon"><use href="#i-phone"/></svg>+234 905 866 1773</a></li>
+          <li><a href="tel:+44XXXXXXXXXX"><svg class="icon"><use href="#i-phone"/></svg>+44 XXX XXXX XXXX</a></li>
+          <li><a href="https://wa.me/2349058661774" target="_blank" rel="noopener"><svg class="icon"><use href="#i-chat"/></svg>WhatsApp Nigeria</a></li>
+          <li><a href="mailto:info@intoskillsforcare.com"><svg class="icon"><use href="#i-mail"/></svg>info@intoskillsforcare.com</a></li>
+          <li><a href="https://www.intoskillsforcare.com" target="_blank" rel="noopener"><svg class="icon"><use href="#i-globe"/></svg>intoskillsforcare.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Into Skills For Care &amp; Corporate Limited. All rights reserved.</p>
+      <p>Designed with care &amp; excellence · <a href="https://www.intoskillsforcare.com">intoskillsforcare.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp float -->
+<a href="https://wa.me/2349058661774" class="wa-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg class="icon"><use href="#i-wa"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const nav = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('main section[id], section#home');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  }, { passive: true });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const id = this.getAttribute('href');
+      if (id.length < 2) return;
+      const el = document.querySelector(id);
+      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); closeMenu(); }
+    });
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const menuClose = document.getElementById('menuClose');
+  const mobileMenu = document.getElementById('mobileMenu');
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  menuBtn.addEventListener('click', openMenu);
+  menuClose.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const val = id => (document.getElementById(id).value || '').trim();
+    const name = document.getElementById('fname');
+    const email = document.getElementById('femail');
+    if (!name.value.trim()) { name.focus(); return; }
+    if (!email.value.trim() || !/\S+@\S+\.\S+/.test(email.value)) { email.focus(); return; }
+
+    const lines = [
+      '*New enquiry from Into Skills website*',
+      '',
+      '*Name:* ' + val('fname'),
+      '*Email:* ' + val('femail'),
+      '*Phone:* ' + (val('fphone') || '—'),
+      '*Service:* ' + (val('fservice') || '—'),
+      '*Location:* ' + (val('flocation') || '—'),
+      '*Preferred start:* ' + (val('fdate') || '—'),
+      '',
+      '*Message:*',
+      val('fmessage') || '—'
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    // Nigerian WhatsApp business number
+    const waNumber = '2349058661774';
+    window.open('https://wa.me/' + waNumber + '?text=' + text, '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>

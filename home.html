@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Professional care, childcare, domestic staffing and corporate support services across Nigeria and the UK."/>
+<meta property="og:title" content="Into Skills For Care & Corporate"/>
+<meta property="og:type" content="website"/>
+<title>Into Skills For Care & Corporate Limited</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --purple:#6B0EA8;
+    --purple-dark:#4A0878;
+    --purple-light:#9B3DD4;
+    --magenta:#C2008F;
+    --magenta-light:#E040B0;
+    --yellow:#FFD700;
+    --yellow-dark:#E5C200;
+    --white:#FFFFFF;
+    --cream:#FAF5FF;
+    --charcoal:#2D2D2D;
+    --gray:#666;
+    --light-gray:#f0f0f0;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;color:var(--charcoal);background:#fff;overflow-x:hidden;opacity:0;animation:fadeIn .8s ease forwards;}
+@keyframes fadeIn{to{opacity:1;}}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:4px;}
+.section-inner,.footer-inner,.contact-grid,.services-grid,.why-grid,.testimonials-grid{width:min(100% - 2rem,1400px);margin-inline:auto;}
+.mobile-menu-btn{display:none;background:none;border:none;font-size:28px;cursor:pointer;}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(74,8,120,.97);z-index:2000;padding:40px;}
+.mobile-menu a{display:block;color:#fff;text-decoration:none;font-size:20px;padding:16px 0;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;padding:60px 40px;background:#fff;}
+.stat{text-align:center;padding:24px;border-radius:16px;background:var(--cream);}
+.stat h3{font-size:clamp(2rem,5vw,4rem);color:var(--purple);}
+.faq-section,.trust-section{padding:70px 40px;}
+.faq-item{margin:12px 0;padding:16px;border:1px solid #ddd;border-radius:12px;}
+.trust-logos{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;}
+.trust-logo{padding:20px;border:1px solid #ddd;border-radius:12px;text-align:center;}
+
+  /* NAV */
+  .nav-wrapper{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 24px;display:flex;justify-content:center;}
+  .nav-pill{background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-radius:60px;padding:10px 24px;display:flex;align-items:center;gap:32px;box-shadow:0 4px 32px rgba(107,14,168,0.18);max-width:900px;width:100%;}
+  .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .nav-logo-img{width:44px;height:44px;border-radius:50%;object-fit:cover;}
+  /* COMMENT: Replace .nav-logo-placeholder with your actual <img> tag pointing to the ISCAF logo */
+  .nav-logo-placeholder {width: 44px;height: 44px;object-fit: contain;flex-shrink: 0;}
+  .nav-brand{display:flex;flex-direction:column;line-height:1;}
+  .nav-brand-main{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--purple);letter-spacing:-0.3px;}
+  .nav-brand-sub{font-size:9px;color:var(--magenta);font-weight:500;letter-spacing:0.5px;text-transform:uppercase;}
+  .nav-links{display:flex;gap:4px;margin:0 auto;}
+  .nav-links a{text-decoration:none;color:var(--charcoal);font-size:14px;font-weight:500;padding:7px 16px;border-radius:40px;transition:all 0.2s;}
+  .nav-links a:hover,.nav-links a.active{background:var(--purple);color:#fff;}
+  .nav-ctas{display:flex;gap:8px;flex-shrink:0;}
+  .btn-outline-nav{background:transparent;border:1.5px solid var(--purple);color:var(--purple);padding:7px 16px;border-radius:40px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-decoration:none;}
+  .btn-outline-nav:hover{background:var(--purple);color:#fff;}
+  .btn-primary-nav{background:var(--yellow);border:none;color:var(--purple-dark);padding:7px 18px;border-radius:40px;font-size:13px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;text-decoration:none;}
+  .btn-primary-nav:hover{background:var(--yellow-dark);}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;}
+  .hero-image-area{flex:1;position:relative;min-height:70vh;}
+  /* COMMENT: Replace the .hero-bg gradient with: background: url('YOUR_HERO_IMAGE.jpg') center/cover no-repeat; */
+  /* Suggested image: A warm, professional photo of a caregiver with an elderly person, or a nanny with children */
+  .hero-bg {position: absolute;inset: 0;display: block; /* Changed from flex to block for image layering */z-index: 1;}
+  .hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Smooth 1-second fade */}
+  .hero-slide.active {
+  opacity: 1;}
+  .hero-overlay,
+  .hero-text-box {
+  z-index: 2;}
+  .hero-bg-pattern{position:absolute;inset:0;opacity:0.08;background-image:radial-gradient(circle at 20% 50%,#fff 1px,transparent 1px),radial-gradient(circle at 80% 20%,#fff 1px,transparent 1px),radial-gradient(circle at 60% 80%,#fff 1px,transparent 1px);background-size:40px 40px,60px 60px,80px 80px;}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(74,8,120,0.85) 100%);}
+  .hero-text-box{position:absolute;top:50%;right:6%;transform:translateY(-50%);background:rgba(0,0,0,0.45);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:28px 32px;max-width:380px;}
+  .hero-text-box h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,4.5rem);color:#fff;line-height:1.3;margin-bottom:10px;}
+  .hero-text-box p{color:rgba(255,255,255,0.85);font-size:14px;line-height:1.6;}
+  .hero-banner{background:var(--purple-dark);padding:32px 40px;text-align:center;position:relative;z-index:2;}
+  .hero-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--yellow),var(--magenta),var(--yellow));}
+  .hero-banner h2{font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:8px;font-style:italic;}
+  .hero-banner p{color:rgba(255,255,255,0.75);font-size:14px;margin-bottom:20px;max-width:560px;margin-left:auto;margin-right:auto;}
+  .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .btn-yellow{background:var(--yellow);color:var(--purple-dark);border:none;padding:12px 28px;border-radius:40px;font-size:14px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all 0.2s;display:inline-block;}
+  .btn-yellow:hover{background:var(--yellow-dark);transform:translateY(-1px);}
+  .btn-white-outline{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.6);padding:12px 28px;border-radius:40px;font-size:14px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;transition:all 0.2s;display:inline-block;}
+  .btn-white-outline:hover{background:rgba(255,255,255,0.1);}
+
+  /* ABOUT STRIP */
+  .about-strip{background:var(--cream);padding:72px 40px;}
+  .section-inner{max-width:1100px;margin:0 auto;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .about-image-placeholder {width: 100%;border-radius: 20px;}
+  .section-tag{display:inline-block;background:rgba(107,14,168,0.1);color:var(--purple);font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:40px;margin-bottom:14px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,4rem);color:var(--purple-dark);line-height:1.25;margin-bottom:16px;}
+  .section-title span{color:var(--magenta);font-style:italic;}
+  .about-text{color:var(--gray);font-size:15px;line-height:1.8;margin-bottom:20px;}
+  .values-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;}
+  .value-chip{background:#fff;border:1px solid rgba(107,14,168,0.15);border-radius:12px;padding:12px 16px;display:flex;align-items:center;gap:10px;}
+  .value-dot{width:8px;height:8px;border-radius:50%;background:var(--magenta);flex-shrink:0;}
+  .value-chip span{font-size:13px;font-weight:600;color:var(--purple-dark);}
+
+  /* SERVICES */
+  .services-section{background:#fff;padding:80px 40px;}
+  .section-header{text-align:center;margin-bottom:52px;}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+  .services-grid-bottom{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:24px auto 0;}
+  .service-card{background:#fff;border:1px solid rgba(107,14,168,0.1);border-radius:20px;overflow:hidden;transition:all 0.3s;cursor:pointer;display:flex;flex-direction:column;}
+  .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(107,14,168,0.15);border-color:var(--purple);}
+  .service-card-img{height:180px;position:relative;overflow:hidden;}
+  /* COMMENT: Each .service-img-placeholder should be replaced with:
+     <img src="YOUR_SERVICE_IMAGE.jpg" alt="Service Name" style="width:100%;height:100%;object-fit:cover;">
+     Use relevant images for each service (elderly care, childcare, domestic help, etc.) */
+  .service-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;}
+  .service-img-placeholder svg{width:40px;height:40px;fill:rgba(255,255,255,0.5);}
+  .service-img-placeholder span{font-size:11px;color:rgba(255,255,255,0.5);font-style:italic;}
+  .s1{background:linear-gradient(135deg,#7B1FA2,#AB47BC);}
+  .s2{background:linear-gradient(135deg,#C2008F,#E91E8C);}
+  .s3{width:100%;height:100%;object-fit:cover;}
+  .s4{background:linear-gradient(135deg,#880E4F,#C2185B);}
+  .s5{background:linear-gradient(135deg,#4A0072,#7B1FA2);}
+  .s6{background:linear-gradient(135deg,#AD1457,#D81B60);}
+  .s7{background:linear-gradient(135deg,#6A1B9A,#AB47BC);}
+  .service-card-body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column;}
+  .service-card-title{font-size:14px;font-weight:700;color:var(--magenta);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
+  .service-card-desc{font-size:13px;color:var(--gray);line-height:1.6;flex:1;margin-bottom:16px;}
+  .btn-learn{background:var(--purple);color:#fff;border:none;padding:8px 20px;border-radius:40px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;align-self:flex-start;text-decoration:none;display:inline-block;}
+  .btn-learn:hover{background:var(--magenta);}
+
+  /* WHY US */
+  .why-section{background:linear-gradient(135deg,var(--purple-dark) 0%,var(--purple) 50%,var(--magenta) 100%);padding:80px 40px;position:relative;overflow:hidden;}
+  .why-section::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;border-radius:50%;border:40px solid rgba(255,255,255,0.05);}
+  .why-section::after{content:'';position:absolute;bottom:-80px;left:-40px;width:250px;height:250px;border-radius:50%;border:30px solid rgba(255,255,255,0.05);}
+  .why-section .section-title{color:#fff;}
+  .why-section .section-tag{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.9);}
+  .why-section .section-header{position:relative;z-index:2;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1100px;margin:0 auto;position:relative;z-index:2;}
+  .why-card{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:28px 22px;text-align:center;backdrop-filter:blur(4px);transition:all 0.3s;}
+  .why-card:hover{background:rgba(255,255,255,0.18);transform:translateY(-4px);}
+  .why-icon{width:56px;height:56px;border-radius:16px;background:var(--yellow);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+  .why-icon svg{width:28px;height:28px;fill:var(--purple-dark);}
+  .why-card h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;}
+  .why-card p{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.6;}
+
+  /* TESTIMONIALS */
+  .testimonials-section{background:var(--cream);padding:80px 40px;}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto;}
+  .testi-card{background:#fff;border-radius:20px;padding:28px;border:1px solid rgba(107,14,168,0.1);position:relative;}
+  .testi-card::before{content:'"';font-family:'Playfair Display',serif;font-size:80px;color:rgba(194,0,143,0.15);position:absolute;top:-10px;left:20px;line-height:1;}
+  .testi-stars{display:flex;gap:3px;margin-bottom:14px;}
+  .star{color:var(--yellow);font-size:16px;}
+  .testi-text{font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:18px;}
+  .testi-author{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0;}
+  .testi-name{font-size:14px;font-weight:700;color:var(--purple-dark);}
+  .testi-role{font-size:12px;color:var(--gray);}
+
+  /* CONTACT */
+  .contact-section{background:#fff;padding:80px 40px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:900px;margin:0 auto;}
+  .contact-card{border-radius:24px;overflow:hidden;border:2px solid rgba(107,14,168,0.15);}
+  .contact-card-header{padding:22px 28px;display:flex;align-items:center;gap:14px;}
+  .contact-logo{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    flex-shrink:0;}
+  .contact-card-header{
+    padding:22px 28px;
+    display:flex;
+    align-items:center;
+    gap:16px;}
+  
+  .ng-header{background:linear-gradient(135deg,var(--purple),var(--purple-light));}
+  .uk-header{background:linear-gradient(135deg,var(--magenta),#E040B0);}
+  .contact-flag{font-size:32px;line-height:1;}
+  .contact-country-name{font-family:'Playfair Display',serif;font-size:20px;color:#fff;font-weight:700;}
+  .contact-country-sub{font-size:12px;color:rgba(255,255,255,0.75);font-weight:400;}
+  .contact-card-body{padding:24px 28px;background:#fff;}
+  .contact-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px;}
+  .contact-item:last-child{margin-bottom:0;}
+  .contact-icon-wrap{width:36px;height:36px;border-radius:10px;background:rgba(107,14,168,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .contact-icon-wrap.mg{background:rgba(194,0,143,0.08);}
+  .contact-icon-wrap svg{width:18px;height:18px;}
+  .contact-label{font-size:11px;color:var(--gray);font-weight:600;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:2px;}
+  .contact-value{font-size:14px;color:var(--charcoal);font-weight:500;}
+  .contact-value a{color:var(--purple);text-decoration:none;}
+  .contact-value a:hover{color:var(--magenta);}
+  /* COMMENT: Replace the placeholder phone numbers, WhatsApp numbers, emails and addresses below with the actual UK office details */
+  .contact-form-area{max-width:900px;margin:40px auto 0;background:var(--cream);border-radius:24px;padding:36px;}
+  .contact-form-title{font-family:'Playfair Display',serif;font-size:22px;color:var(--purple-dark);margin-bottom:24px;text-align:center;}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .form-group{display:flex;flex-direction:column;gap:6px;}
+  .form-group label{font-size:12px;font-weight:600;color:var(--purple-dark);text-transform:uppercase;letter-spacing:0.5px;}
+  .form-group input,.form-group select,.form-group textarea{border:1.5px solid rgba(107,14,168,0.2);border-radius:12px;padding:11px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--charcoal);background:#fff;outline:none;transition:border-color 0.2s;}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--purple);}
+  .form-group textarea{resize:vertical;min-height:100px;}
+  .form-full{grid-column:1/-1;}
+  .form-submit{background:var(--purple);color:#fff;border:none;padding:14px 36px;border-radius:40px;font-size:15px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.2s;display:block;margin:0 auto;}
+  .form-submit:hover{background:var(--magenta);transform:translateY(-1px);}
+
+  /* FOOTER */
+  footer{background:var(--purple-dark);padding:52px 40px 24px;}
+  .footer-inner{max-width:1100px;margin:0 auto;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+  .footer-brand p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.7;margin-top:12px;margin-bottom:16px;max-width:260px;}
+  .footer-logo-area{display:flex;align-items:center;gap:10px;}
+  /* COMMENT: Replace .footer-logo-placeholder with your actual logo <img> tag */
+  .footer-logo-placeholder{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--magenta),var(--yellow));display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--purple-dark);text-align:center;line-height:1.2;padding:4px;flex-shrink:0;}
+  .footer-logo-text{font-family:'Playfair Display',serif;font-size:13px;color:#fff;font-weight:700;line-height:1.3;}
+  .footer-social{display:flex;gap:8px;margin-top:4px;}
+  .social-btn{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s;}
+  .social-btn:hover{background:var(--magenta);}
+  .social-btn svg{width:16px;height:16px;fill:#fff;}
+  .footer-col h4{color:#fff;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;position:relative;padding-bottom:10px;}
+  .footer-col h4::after{content:'';position:absolute;bottom:0;left:0;width:28px;height:2px;background:var(--yellow);}
+  .footer-col ul{list-style:none;}
+  .footer-col ul li{margin-bottom:10px;}
+  .footer-col ul li a{color:rgba(255,255,255,0.6);font-size:13px;text-decoration:none;transition:color 0.2s;}
+  .footer-col ul li a:hover{color:var(--yellow);}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;align-items:center;justify-content:space-between;}
+  .footer-bottom p{color:rgba(255,255,255,0.4);font-size:12px;}
+  .footer-bottom a{color:var(--yellow);text-decoration:none;}
+
+  /* WHATSAPP FLOATING BTN */
+  .whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);cursor:pointer;transition:all 0.2s;text-decoration:none;}
+  .whatsapp-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,0.65);}
+  .whatsapp-float svg{width:30px;height:30px;fill:#fff;}
+
+  /* SECTION DIVIDER */
+  .divider{height:4px;background:linear-gradient(90deg,var(--purple),var(--magenta),var(--yellow),var(--magenta),var(--purple));}
+
+  /* ANIMATIONS */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+  .fade-up{animation:fadeUp 0.7s ease both;}
+  .delay-1{animation-delay:0.1s;}
+  .delay-2{animation-delay:0.2s;}
+  .delay-3{animation-delay:0.3s;}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .nav-pill{gap:16px;padding:10px 16px;}
+    .nav-links{gap:0;}
+    .nav-links a{padding:7px 10px;font-size:13px;}
+    .about-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .services-grid-bottom{grid-template-columns:repeat(2,1fr);max-width:100%;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    .form-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    .nav-ctas{display:none;}
+    .services-grid{grid-template-columns:1fr;}
+    .services-grid-bottom{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .footer-top{grid-template-columns:1fr;}
+    .hero-text-box{right:5%;left:5%;top:auto;bottom:120px;transform:none;}
+    .hero-banner{padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<!-- COMMENT: Update the href below with the actual Nigerian or UK WhatsApp number in international format -->
+<a href="https://wa.me/2349058661774" class="whatsapp-float" target="_blank" title="Chat on WhatsApp" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- NAVIGATION -->
+<nav class="nav-wrapper" role="navigation" aria-label="Main navigation">
+  <div class="nav-pill"><button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+    <a href="#home" class="nav-logo">
+      
+      <img src="LOGO.png" alt="ISCAF Logo" class="nav-logo-placeholder">
+      
+      <div class="nav-brand">
+        <span class="nav-brand-main">Into Skills</span>
+        <span class="nav-brand-sub">Care & Corporate LTD.</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-ctas">
+      <a href="tel:+2349058661773" class="btn-outline-nav">Call Us</a>
+      <a href="#contact" class="btn-primary-nav">Book Now</a>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-image-area">
+    <div class="hero-bg">
+  <img src="HERO-BG.jpg" class="hero-slide active" alt="Hero Background 1">
+  <img src="cert.jpg" class="hero-slide" alt="Hero Background 2">
+  <img src="healthcare.jpg" class="hero-slide" alt="Hero Background 3">
+    </div>
+      <div class="hero-bg-pattern"></div>
+      <!-- COMMENT: Replace the entire .hero-bg div background with your actual hero image.
+           Recommended: A warm, high-quality photo of a caregiver assisting an elderly person, 
+           or a professional nanny with children. Set as: background: url('hero.jpg') center/cover no-repeat;
+           Keep the .hero-overlay div below to maintain text readability. -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-text-box fade-up">
+      <h1>Trusted Care &amp; Professional Excellence</h1>
+      <p>Connecting families and organisations with skilled, vetted, and compassionate professionals across Nigeria &amp; the UK.</p>
+    </div>
+  </div>
+  <div class="hero-banner">
+    <h2>Welcome to Into Skills For Care &amp; Corporate Limited</h2>
+    <p>Your trusted partner for elderly care, childcare, domestic assistance, corporate support, and so much more.</p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn-yellow">Our Services</a>
+      <a href="#contact" class="btn-white-outline">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT SECTION -->
+<section class="about-strip" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <img src="ABOUT.jpg" alt="Our team" class="about-image-placeholder">
+      </div>
+      <div>
+        <span class="section-tag">Who We Are</span>
+        <h2 class="section-title">Care with heart. <span>Excellence by design.</span></h2>
+        <p class="about-text">Into Skills For Care &amp; Corporate Limited is a professional staffing and care services company operating across Nigeria and the United Kingdom. We source, train, and deploy compassionate, skilled individuals to support families, the elderly, children, and corporate organisations.</p>
+        <p class="about-text">Our mission is simple — to ensure that every client receives the highest standard of care and professional assistance, delivered with integrity, warmth, and reliability.</p>
+        <div class="values-grid">
+          <div class="value-chip"><div class="value-dot"></div><span>Compassion</span></div>
+          <div class="value-chip"><div class="value-dot"></div><span>Integrity</span></div>
+          <div class="value-chip"><div class="value-dot"></div><span>Excellence</span></div>
+          <div class="value-chip"><div class="value-dot"></div><span>Reliability</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SERVICES SECTION -->
+<section class="services-section" id="services">
+  <div class="section-header">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title">Our <span>Services</span></h2>
+    <p style="color:var(--gray);font-size:15px;max-width:520px;margin:0 auto;line-height:1.7;">Comprehensive care and professional assistance — tailored to your needs, delivered with excellence.</p>
+  </div>
+  <div class="services-grid">
+
+    <!-- SERVICE 1: ELDERLY CARE -->
+    <div class="service-card fade-up">
+      <div class="service-card-img">
+        <div class="service-img-placeholder s1">
+          <!-- COMMENT: Replace with: > -->
+          <img src="granny.png" alt="Elderly Home Care" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-title">Elderly Home Care</div>
+        <p class="service-card-desc">Compassionate caregivers, companions, hospital and outing helpers for the elderly and adults of all needs.</p>
+        <a href="#contact" class="btn-learn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SERVICE 2: CHILD CARE -->
+    <div class="service-card fade-up delay-1">
+      <div class="service-card-img">
+        <div class="service-img-placeholder s2">
+          <!-- COMMENT: Replace with: <img src="child-care.jpg" alt="Child Care / Nanny Services" style="width:100%;height:100%;object-fit:cover;"> -->
+          <img src="kids.jpg" alt="Child Care / Nanny Services" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-title">Child Care / Nanny</div>
+        <p class="service-card-desc">Loving, vetted, and experienced nannies carefully matched to your family for the best care of your children.</p>
+        <a href="#contact" class="btn-learn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SERVICE 3: DOMESTIC ASSISTANCE -->
+    <div class="service-card fade-up delay-2">
+      <div class="service-card-img">
+        <div class="service-img-placeholder s3">
+          <!-- COMMENT: Replace with: <img src="domestic-assistance.jpg" alt="Domestic Assistance" style="width:100%;height:100%;object-fit:cover;"> -->
+          <img src="Domestic.png" alt="Domestic Assistance" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-title">Domestic Assistance</div>
+        <p class="service-card-desc">Reliable domestic staff for cleaning, cooking, errands, and household management — done right every time.</p>
+        <a href="#contact" class="btn-learn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SERVICE 4: CORPORATE ASSISTANT -->
+    <div class="service-card fade-up delay-3">
+      <div class="service-card-img">
+        <div class="service-img-placeholder s4">
+          <!-- COMMENT: Replace with: <img src="corporate-assistant.jpg" alt="Corporate / Executive Assistant" style="width:100%;height:100%;object-fit:cover;"> -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.98 16.5 2 15 2c-1.1 0-2 .5-2.61 1.28L12 4l-.39-.72C10.99 2.5 10.1 2 9 2 7.5 2 6 2.98 6 4.64c0 .48.11.92.18 1.36H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1.36 0 .91-.31 1.64-.69 1.64H13.5c.29-.72.5-1.55.5-2.36 0-.36-.05-.69-.13-1h1.13zm-6 0h1.13c-.08.31-.13.64-.13 1 0 .81.21 1.64.5 2.36H8.69C8.31 7 8 6.27 8 5.36 8 4.45 8.45 4 9 4z"/></svg>
+          <span>Corporate assistant image</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-title">Corporate / Executive Assistant</div>
+        <p class="service-card-desc">Professional, discreet executive assistants to support busy professionals and organisations.</p>
+        <a href="#contact" class="btn-learn">Learn More</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM ROW — 3 CARDS -->
+  <div class="services-grid-bottom">
+
+    <!-- SERVICE 5: CORPORATE WELLNESS -->
+    <div class="service-card fade-up">
+      <div class="service-card-img">
+        <div class="service-img-placeholder s5">
+          <!-- COMMENT: Replace with: <img src="corporate-wellness.jpg" alt="Corporate Wellness" style="width:100%;height:100%;object-fit:cover;"> -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span>Corporate wellness image</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-title">Corporate Wellness</div>
+        <p class="service-card-desc">Tailored workplace wellbeing programmes and wellness consultations designed to keep your workforce healthy and productive.</p>
+        <a href="#contact" class="btn-learn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SERVICE 6: TRAINING & WORKSHOPS -->
+    <div class="service-card fade-up delay-1">
+      <div class="service-card-img">
+        <div class="service-img-placeholder s6">
+          <!-- COMMENT: Replace with: <img src="training-workshops.jpg" alt="Training and Workshops" style="width:100%;height:100%;object-fit:cover;"> -->
+          <img src="cert.jpg" alt="Training and Workshops" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-title">Training &amp; Workshops</div>
+        <p class="service-card-desc">Skills development and certification programmes for care professionals, corporate staff, and individuals seeking growth.</p>
+        <a href="#contact" class="btn-learn">Learn More</a>
+      </div>
+    </div>
+
+    <!-- SERVICE 7: ADULT DAY CARE CENTRE -->
+    <div class="service-card fade-up delay-2">
+      <div class="service-card-img">
+        <div class="service-img-placeholder s7">
+          <!-- COMMENT: Replace with: <img src="adult-day-care.jpg" alt="Adult Day Care Centre" style="width:100%;height:100%;object-fit:cover;"> -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          <span>Adult day care centre image</span>
+        </div>
+      </div>
+      <div class="service-card-body">
+        <div class="service-card-title">Adult Day Care Centre</div>
+        <p class="service-card-desc">A safe, engaging and stimulating daytime environment for adults who need supervised support and social interaction.</p>
+        <a href="#contact" class="btn-learn">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section">
+  <div class="section-header">
+    <span class="section-tag">Why Choose Us</span>
+    <h2 class="section-title" style="color:#fff;">Why families &amp; companies trust <span style="color:var(--yellow);">Into Skills</span></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      </div>
+      <h3>Background Checked</h3>
+      <p>Every professional we place is thoroughly vetted with full background and reference checks for your peace of mind.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+      </div>
+      <h3>Trained &amp; Certified</h3>
+      <p>Our staff undergo professional training and certification before deployment — ensuring skill, confidence, and competence.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      </div>
+      <h3>Flexible Packages</h3>
+      <p>We offer short-term, long-term, live-in, and live-out arrangements tailored to your unique schedule and requirements.</p>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.12-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+      </div>
+      <h3>Nigeria &amp; UK Based</h3>
+      <p>With offices in both Nigeria and the United Kingdom, we serve clients across both countries with local expertise.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-header">
+    <span class="section-tag">Testimonials</span>
+    <h2 class="section-title">What our clients <span>say</span></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testi-card">
+      <div class="testi-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <!-- COMMENT: Replace these with real client testimonials when available -->
+      <p class="testi-text">"Into Skills provided us with an exceptional caregiver for my elderly mother. The level of professionalism and genuine compassion was outstanding. We couldn't be more grateful."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AO</div>
+        <div>
+          <div class="testi-name">Adaeze Okonkwo</div>
+          <div class="testi-role">Family Client — Lagos, Nigeria</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"We hired a corporate assistant through Into Skills and within weeks she had completely transformed our office operations. Highly recommended for any business needing reliable support."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">CE</div>
+        <div>
+          <div class="testi-name">Chukwuemeka Eze</div>
+          <div class="testi-role">Corporate Client — Abuja, Nigeria</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"The nanny they placed with us is brilliant with our kids. The screening process gave us full confidence. Into Skills truly delivers on their promise of quality and care."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">FB</div>
+        <div>
+          <div class="testi-name">Funmi Badmus</div>
+          <div class="testi-role">Family Client — London, UK</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section" id="contact">
+  <div class="section-header">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Contact <span>Us</span></h2>
+    <p style="color:var(--gray);font-size:15px;max-width:480px;margin:0 auto;line-height:1.7;">Reach out to our team in Nigeria or the UK — we're ready to help you find the right support.</p>
+  </div>
+
+  <!-- DUAL CONTACT CARDS -->
+  <div class="contact-grid">
+
+    <!-- NIGERIA CARD -->
+    <div class="contact-card">
+      <div class="contact-card-header ng-header">
+        <img src="naij-logo.png" class="contact-logo" alt="Nigeria Office Logo">
+        <div>
+          <div class="contact-country-name">Nigeria Office</div>
+          <div class="contact-country-sub">Lagos, Nigeria</div>
+        </div>
+      </div>
+      <div class="contact-card-body">
+        <div class="contact-item">
+          <div class="contact-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="var(--purple)" xmlns="http://www.w3.org/2000/svg"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.12-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value"><a href="tel:+2349058661773">+234 905 866 1773</a> / <a href="tel:09058661773">09058661773</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="var(--purple)" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value"><a href="https://wa.me/2349058661774" target="_blank">+234 905 866 1774</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="var(--purple)" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <!-- COMMENT: Replace with the actual Nigerian office email address -->
+            <div class="contact-value"><a href="mailto:info@intoskillsforcare.com">info@intoskillsforcare.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="var(--purple)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Address</div>
+            <!-- COMMENT: Replace with the actual Nigerian office address -->
+            <div class="contact-value">Lagos, Nigeria</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UK CARD -->
+    <div class="contact-card">
+      <div class="contact-card-header uk-header">
+        <img src="UK.png"
+     class="contact-logo"
+     alt="United Kingdom Office Logo">
+        <div>
+          <div class="contact-country-name">United Kingdom Office</div>
+          <div class="contact-country-sub">United Kingdom</div>
+        </div>
+      </div>
+      <div class="contact-card-body">
+        <div class="contact-item">
+          <div class="contact-icon-wrap mg">
+            <svg viewBox="0 0 24 24" fill="var(--magenta)" xmlns="http://www.w3.org/2000/svg"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.12-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <!-- COMMENT: Replace with the actual UK phone number -->
+            <div class="contact-value"><a href="tel:+44XXXXXXXXXX">+44 XXX XXXX XXXX</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap mg">
+            <svg viewBox="0 0 24 24" fill="var(--magenta)" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <!-- COMMENT: Replace with the actual UK WhatsApp number -->
+            <div class="contact-value"><a href="https://wa.me/44XXXXXXXXXX" target="_blank">+44 XXX XXXX XXXX</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap mg">
+            <svg viewBox="0 0 24 24" fill="var(--magenta)" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <!-- COMMENT: Replace with the actual UK office email address -->
+            <div class="contact-value"><a href="mailto:uk@intoskillsforcare.com">uk@intoskillsforcare.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap mg">
+            <svg viewBox="0 0 24 24" fill="var(--magenta)" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Address</div>
+            <!-- COMMENT: Replace with the actual UK office address -->
+            <div class="contact-value">United Kingdom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form-area">
+    <div class="contact-form-title">Send Us a Message</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" placeholder="e.g. Adaeze Okonkwo"/>
+      </div>
+      <div class="form-group">
+        <label for="femail">Email Address</label>
+        <input type="email" id="femail" placeholder="your@email.com"/>
+      </div>
+      <div class="form-group">
+        <label for="fphone">Phone Number</label>
+        <input type="tel" id="fphone" placeholder="+234 or +44..."/>
+      </div>
+      <div class="form-group">
+        <label for="fservice">Service Interested In</label>
+        <select id="fservice">
+          <option value="">Select a service...</option>
+          <option>Elderly Home Care</option>
+          <option>Child Care / Nanny</option>
+          <option>Domestic Assistance</option>
+          <option>Corporate / Executive Assistant</option>
+          <option>Corporate Wellness</option>
+          <option>Training &amp; Workshops</option>
+          <option>Adult Day Care Centre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="flocation">Your Location</label>
+        <select id="flocation">
+          <option value="">Select location...</option>
+          <option>Nigeria</option>
+          <option>United Kingdom</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fdate">Preferred Start Date</label>
+        <input type="date" id="fdate"/>
+      </div>
+      <div class="form-group form-full">
+        <label for="fmessage">Message</label>
+        <textarea id="fmessage" placeholder="Tell us about your requirements..."></textarea>
+      </div>
+    </div>
+    <button class="form-submit" onclick="alert('Thank you for your message! We will get back to you shortly.')">Send Message</button>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<section class="stats">
+<div class="stat"><h3>500+</h3><p>Successful Placements</p></div>
+<div class="stat"><h3>98%</h3><p>Client Satisfaction</p></div>
+<div class="stat"><h3>2</h3><p>Countries Served</p></div>
+<div class="stat"><h3>24/7</h3><p>Support</p></div>
+</section>
+
+<section class="trust-section">
+<h2 class="section-title">Trusted By</h2>
+<div class="trust-logos">
+<div class="trust-logo">Skills for Care</div>
+<div class="trust-logo">Care Quality Commission</div>
+<div class="trust-logo">NHS Partners</div>
+<div class="trust-logo">Corporate Clients</div>
+</div>
+</section>
+
+<section class="faq-section">
+<h2 class="section-title">Frequently Asked Questions</h2>
+<div class="faq-item"><strong>How are caregivers vetted?</strong><p>All candidates undergo screening and verification.</p></div>
+<div class="faq-item"><strong>Can I hire short-term staff?</strong><p>Yes, short and long-term placements are available.</p></div>
+<div class="faq-item"><strong>Do you provide UK placements?</strong><p>Yes, subject to eligibility and requirements.</p></div>
+<div class="faq-item"><strong>How quickly can services begin?</strong><p>Depending on availability, often within days.</p></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-area">
+          <!-- COMMENT: Replace this placeholder div with: <img src="YOUR_LOGO_WHITE.png" alt="Into Skills For Care & Corporate Limited" style="height:44px;"> -->
+          <img src="LOGO.png" alt="Into Skills For Care & Corporate Limited" style="height:44px;">
+          <div class="footer-logo-text">Into Skills For Care<br/>&amp; Corporate Limited</div>
+        </div>
+        <p>Your trusted partner for care, domestic, and corporate staffing solutions across Nigeria and the United Kingdom.</p>
+        <div class="footer-social">
+          <!-- COMMENT: Update these links with actual social media profile URLs -->
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+          <a href="https://wa.me/2349058661774" class="social-btn" aria-label="WhatsApp" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Elderly Home Care</a></li>
+          <li><a href="#services">Child Care / Nanny</a></li>
+          <li><a href="#services">Domestic Assistance</a></li>
+          <li><a href="#services">Corporate Assistant</a></li>
+          <li><a href="#services">Corporate Wellness</a></li>
+          <li><a href="#services">Training &amp; Workshops</a></li>
+          <li><a href="#services">Adult Day Care Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+2349058661773">🇳🇬 +234 905 866 1773</a></li>
+          <!-- COMMENT: Replace with actual UK phone number -->
+          <li><a href="tel:+44XXXXXXXXXX">🇬🇧 +44 XXX XXXX XXXX</a></li>
+          <li><a href="https://wa.me/2349058661774" target="_blank">WhatsApp (NG)</a></li>
+          <li><a href="http://www.intoskillsforcare.com" target="_blank">intoskillsforcare.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Into Skills For Care &amp; Corporate Limited. All rights reserved.</p>
+      <p>Designed with care &amp; excellence &nbsp;|&nbsp; <a href="http://www.intoskillsforcare.com">intoskillsforcare.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',function(e){
+      const target=document.querySelector(this.getAttribute('href'));
+      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+  // Active nav link on scroll
+  const sections=document.querySelectorAll('section[id]');
+  const navLinks=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{
+    let current='';
+    sections.forEach(s=>{
+      if(window.scrollY>=s.offsetTop-120)current=s.getAttribute('id');
+    });
+    navLinks.forEach(a=>{
+      a.classList.remove('active');
+      if(a.getAttribute('href')==='#'+current)a.classList.add('active');
+    });
+  });
+</script>
+<script>
+  const slides = document.querySelectorAll('.hero-slide');
+  let currentSlide = 0;
+
+  function nextSlide() {
+    // Remove active class from current image
+    slides[currentSlide].classList.remove('active');
+    
+    // Move to next index, loop back to 0 if at the end
+    currentSlide = (currentSlide + 1) % slides.length;
+    
+    // Add active class to new image
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Change image every 4000ms (4 seconds)
+  setInterval(nextSlide, 4000);
+</script>
+
+<script>
+function toggleMenu(){
+ const m=document.getElementById('mobileMenu');
+ m.style.display=m.style.display==='block'?'none':'block';
+}
+window.addEventListener('scroll',()=>{
+ document.querySelector('.nav-wrapper')?.classList.toggle('scrolled',window.scrollY>50);
+});
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
+});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
